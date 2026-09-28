@@ -1,0 +1,199 @@
+{
+  "defects": {
+    "D01": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": true,
+        "schema": true
+      },
+      "desc": "customer_id is null on some orders (a required field).",
+      "is_defect": true,
+      "klass": "null-required"
+    },
+    "D02": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "a duplicate order id is present.",
+      "is_defect": true,
+      "klass": "duplicate-key"
+    },
+    "D03": {
+      "caught": {
+        "distribution": false,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": true,
+        "schema": false
+      },
+      "desc": "some orders reference a customer_id that does not exist.",
+      "is_defect": true,
+      "klass": "referential"
+    },
+    "D04": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some order quantities are 0 or absurdly large.",
+      "is_defect": true,
+      "klass": "out-of-range"
+    },
+    "D05": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some unit_prices are negative.",
+      "is_defect": true,
+      "klass": "out-of-range"
+    },
+    "D06": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some order_date values are not valid ISO dates.",
+      "is_defect": true,
+      "klass": "type-format"
+    },
+    "D07": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some customer emails are malformed.",
+      "is_defect": true,
+      "klass": "format-regex"
+    },
+    "D08": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some customer countries are outside the known set.",
+      "is_defect": true,
+      "klass": "domain-set"
+    },
+    "D09": {
+      "caught": {
+        "distribution": false,
+        "expectations": true,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "line_total is computed wrong (adds instead of multiplies).",
+      "is_defect": true,
+      "klass": "computed-field"
+    },
+    "D10": {
+      "caught": {
+        "distribution": false,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "the transform silently drops ~12% of valid rows.",
+      "is_defect": true,
+      "klass": "silent-drop"
+    },
+    "D11": {
+      "caught": {
+        "distribution": true,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "every unit_price is inflated 100x (cents loaded as dollars).",
+      "is_defect": true,
+      "klass": "scale-error"
+    },
+    "D12": {
+      "caught": {
+        "distribution": false,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": true,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "the load appends instead of replacing (re-running doubles rows).",
+      "is_defect": true,
+      "klass": "idempotency"
+    },
+    "D13": {
+      "caught": {
+        "distribution": false,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some customer countries are changed to a DIFFERENT valid country.",
+      "is_defect": true,
+      "klass": "silent-corruption"
+    },
+    "D14": {
+      "caught": {
+        "distribution": false,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "some customer names are mojibake from a bad encoding.",
+      "is_defect": true,
+      "klass": "encoding"
+    },
+    "D15": {
+      "caught": {
+        "distribution": false,
+        "expectations": false,
+        "pipeline_ran": false,
+        "reconciliation": false,
+        "referential": false,
+        "schema": false
+      },
+      "desc": "new products are added to the catalog that no order references (additive, non-defect).",
+      "is_defect": false,
+      "klass": "additive"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Assay — ETL data-quality testing",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "postAttachCommand": "bash .devcontainer/run-project.sh",
+  "remoteUser": "vscode"
+}

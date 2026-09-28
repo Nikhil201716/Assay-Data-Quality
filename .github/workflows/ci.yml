@@ -1,0 +1,28 @@
+name: ci
+
+# Assay is about data-quality testing, so CI runs the test suite AND the
+# fault-injection scoring on every push -- a red build is a defect a check caught.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Tests (property-based transforms + check meta-tests)
+        run: python -m pytest tests
+      - name: Coverage
+        run: |
+          python -m coverage run -m pytest tests
+          python -m coverage report --include="pipeline/*,checks/*"
+      - name: Fault-injection scoring (which check catches which defect)
+        run: python scoring/score.py
+      - uses: actions/upload-artifact@v4
+        with: { name: reports, path: reports/*.json }

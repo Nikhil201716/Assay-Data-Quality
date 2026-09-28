@@ -1,0 +1,5 @@
+# Assay dependencies. The pipeline and checks use only the Python standard
+# library (sqlite3, statistics, csv, re); these are for the tests + measurement.
+pytest==9.1.1
+coverage==7.16.2
+hypothesis==6.168.3

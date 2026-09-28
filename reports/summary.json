@@ -1,0 +1,176 @@
+{
+  "additive_changes": 1,
+  "baseline_pipeline_ran_caught": 0,
+  "caught_per_mechanism": {
+    "distribution": 1,
+    "expectations": 8,
+    "pipeline_ran": 0,
+    "reconciliation": 7,
+    "referential": 2,
+    "schema": 1
+  },
+  "defects_caught_by_any": 12,
+  "defects_missed_by_all": 2,
+  "distribution_catches_expectations_miss": [
+    "D11"
+  ],
+  "false_positives": [],
+  "headline": "'The pipeline ran' catches 0 of 14 injected data defects. The expectation suite catches 8, reconciliation 7, referential 2, distribution 1; 2 slip past every check. No check flagged the 1 additive change (0 false positives).",
+  "mechanisms": [
+    "pipeline_ran",
+    "schema",
+    "expectations",
+    "referential",
+    "reconciliation",
+    "distribution"
+  ],
+  "missed_defects": [
+    {
+      "desc": "some customer countries are changed to a DIFFERENT valid country.",
+      "id": "D13",
+      "klass": "silent-corruption"
+    },
+    {
+      "desc": "some customer names are mojibake from a bad encoding.",
+      "id": "D14",
+      "klass": "encoding"
+    }
+  ],
+  "per_class": {
+    "additive": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 0,
+      "schema": 0
+    },
+    "computed-field": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 1,
+      "pipeline_ran": 0,
+      "reconciliation": 1,
+      "referential": 0,
+      "schema": 0
+    },
+    "domain-set": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 1,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 0,
+      "schema": 0
+    },
+    "duplicate-key": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 1,
+      "pipeline_ran": 0,
+      "reconciliation": 1,
+      "referential": 0,
+      "schema": 0
+    },
+    "encoding": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 0,
+      "schema": 0
+    },
+    "format-regex": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 1,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 0,
+      "schema": 0
+    },
+    "idempotency": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 1,
+      "referential": 0,
+      "schema": 0
+    },
+    "null-required": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 1,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 1,
+      "schema": 1
+    },
+    "out-of-range": {
+      "defects": 2,
+      "distribution": 0,
+      "expectations": 2,
+      "pipeline_ran": 0,
+      "reconciliation": 2,
+      "referential": 0,
+      "schema": 0
+    },
+    "referential": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 1,
+      "schema": 0
+    },
+    "scale-error": {
+      "defects": 1,
+      "distribution": 1,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 1,
+      "referential": 0,
+      "schema": 0
+    },
+    "silent-corruption": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 0,
+      "schema": 0
+    },
+    "silent-drop": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 0,
+      "pipeline_ran": 0,
+      "reconciliation": 1,
+      "referential": 0,
+      "schema": 0
+    },
+    "type-format": {
+      "defects": 1,
+      "distribution": 0,
+      "expectations": 1,
+      "pipeline_ran": 0,
+      "reconciliation": 0,
+      "referential": 0,
+      "schema": 0
+    }
+  },
+  "reconciliation_catches_expectations_miss": [
+    "D11",
+    "D10",
+    "D12"
+  ],
+  "referential_catches_expectations_miss": [
+    "D03"
+  ],
+  "total_defects": 14
+}

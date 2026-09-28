@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Keep: reports/*.json (real run output), docs/*.pdf, all source, tests,
+# the check suite, the defect catalog and the harness.
